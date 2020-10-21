@@ -41,7 +41,7 @@ final public class MultipleRequestViewController: UIViewController {
 
 extension MultipleRequestViewController {
     
-    private func getUserAvatar() -> Promise<String> {
+    func getUserAvatar() -> Promise<String> {
         return Promise { seal in
             guard let url = URL(string: "https://reqres.in/api/users/5") else { return }
             URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
